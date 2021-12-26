@@ -1,0 +1,222 @@
+<html>
+<head>
+<style>
+#main
+{
+padding:12px;
+background-color:#0c0d33;
+width:390px;
+height:auto;
+margin-left:auto;
+margin-right:auto;
+margin-top: 100px;
+}
+
+.tp
+{
+padding:1px;
+background-color:#d68f13;
+color:#fcf403;
+font-size:17px;
+}
+
+.midd
+{
+	
+}
+
+.midd table
+{
+width:auto;
+color:#fcf403;
+margin-left:auto;
+margin-right:auto;
+padding:3px;
+font-size:17px;
+}
+
+table td
+{
+padding:5px;
+}
+
+.bott
+{
+display:flex;
+padding:8px;
+background-color:#d68f13;
+}
+
+.bott button
+{
+padding:8px 10px;
+width:95px;
+font-size:15px;
+color:white;
+}
+</style>
+
+<script language="javascript" type="text/javascript">
+function validation()
+{
+ var fn = document.form.fnme.value;
+ var ln = document.form.lnme.value;
+ var gen = document.form.gen.value;
+ var eml = document.form.e.value;
+ var phn = document.form.p.value;
+ var pss = document.form.pss.value;
+ var cpws = document.form.cpss.value;
+ 	if (fn=="" || ln=="" || gen=="" || eml=="" || phn=="" || pss=="" || cpws=="")
+ 	{
+ 	alert("Error: Input is empty!");
+	}
+ 	else if(document.form.dt.selectedIndex == 0)
+ 	{
+	alert("Error: Input is empty!");	
+	}
+	else if(document.form.mn.selectedIndex == 0)
+	{
+	alert("Error: Input is empty!");	
+	}
+	else if(document.form.yr.selectedIndex == 0)
+	{
+	alert("Error: Input is empty!");	
+	}
+	else if(document.form.coun.selectedIndex == 0)
+	{
+	alert("Error: Input is empty!");	
+	}
+	else if(!this.form.cb.checked)
+	{
+	alert("Error: Input is Empty!");
+	}
+	
+	if(document.form.p.value.length != 10)
+	{
+	alert("Mobile number is not valid");		
+	}
+	if(isNaN(document.form.p.value))
+	{
+	alert("Please use numeric values for number");		
+	}
+
+	var pass1 = document.getElementById("pss").value;
+	var pass2 = document.getElementById("cpss").value;
+	if(pass1 != pass2)
+	{
+	alert("Password is not correct");
+	}
+
+	if(!eml.includes("@",".")) 
+	{
+	alert("Enter valid email");
+	}
+
+}
+
+function resetbutton()
+{
+	form.reset();
+}
+</script>
+
+</head>
+<body>
+<div id="main">
+	
+	<div class="tp">
+	<p>&nbsp&nbspSign Up</p>
+	</div>
+
+	<div class="midd">
+	<form name="form">
+	<table>
+	<tr>
+		<td><lable>First Name</lable></td>
+		<td><input type="text" name="fnme" placeholder="Enter First Name"></td>
+	</tr>
+	<tr>
+		<td><lable>Last Name</lable></td>
+		<td><input type="text" name="lnme" placeholder="Enter Last Name"></td>
+	</tr>
+	<tr>
+		<td><lable>Date of Birth</lable></td>
+		<td>
+		<select name="dt">
+		<option value="0">Date</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		</select>
+		<select name="mn">
+		<option value="0">Month</option>
+		<option value="1">January</option>
+		<option value="2">February</option>
+		<option value="2">March</option>
+		<option value="4">April</option>
+		</select>
+		<select name="yr">
+		<option value="0">Year</option>
+		<option value="1">1998</option>
+		<option value="2">1999</option>
+		<option value="3">2000</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td><lable>Gender</lable></td>
+		<td>
+			<input type="radio" name="gen" value="male">Male
+			<input type="radio" name="gen" value="female">Female
+		</td>
+	</tr>
+	<tr>
+		<td><lable>Country</lable></td>
+		<td>
+		<select name="coun">
+		<option value="0">Country</option>
+		<option value="s">Sri Lanka</option>
+		<option value="u">UK</option>
+		<option value="a">Astralia</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td><lable>E-mail</lable></td>
+		<td><input type="email" id="e" placeholder="Enter E-mail"></td>
+	</tr>
+	<tr>
+		<td><lable>Phone</lable></td>
+		<td><input type="text" name="p" placeholder="Enter Phone"></td>
+	</tr>
+	<tr>
+		<td><lable>Password</lable></td>
+		<td><input type="password" id="pss"></td>
+	</tr>
+	<tr>
+		<td><lable>Confirm Password</lable></td>
+		<td><input type="password" id="cpss"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<input type="checkbox" name="cb">
+			<p>I Agree to the Terms of use</p>
+		</td>
+	</tr>
+	</table>
+	</form>
+	</div>
+
+	<div class="bott">
+		<button type="submit" onClick="validation()" style="background-color:#07ba19;">Submit</button>
+		<button type="reset" value="Reset" onClick="resetbutton()" style="background-color:#e31009;">Reset</button>
+	</div>
+</div>
+</body>
+</html>
+
+
+
